@@ -6,7 +6,8 @@ import GeneralInfo from './GeneralInfo/GeneralInfo';
 import VideoButton from './VideoButton/VideoButton';
 import GoogleMap from './GoogleMap/GoogleMap';
 import TimeLine from './TimeLine/TimeLine';
-
+import Gallery from './Gallery/Gallery';
+import MasterWorks from './MasterWorks/MasterWorks';
 const PhotographerPresentational = props => {
     const { mainPic } = props;
     const { name } = props;
@@ -17,6 +18,8 @@ const PhotographerPresentational = props => {
     const { googleLife } = props;
     const { timeLineDates } = props;
     const { timeLineInfos } = props;
+    const { gallery } = props;
+    const { masterWorks } = props;
 
     return (
         <>
@@ -26,8 +29,10 @@ const PhotographerPresentational = props => {
                 timeLineDates={timeLineDates}
                 timeLineInfos={timeLineInfos}
             />
+            <MasterWorks masterWorks={masterWorks} />
             <VideoButton videoSrc={videoSrc} />
             <GoogleMap googleMap={googleMap} googleLife={googleLife} />
+            <Gallery gallery={gallery} />
         </>
     );
 };
@@ -42,6 +47,8 @@ PhotographerPresentational.propTypes = {
     googleLife: PropTypes.string.isRequired,
     timeLineDates: PropTypes.arrayOf(PropTypes.string).isRequired,
     timeLineInfos: PropTypes.arrayOf(PropTypes.string).isRequired,
+    gallery: PropTypes.arrayOf(PropTypes.string).isRequired,
+    masterWorks: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default PhotographerPresentational;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Layout from '../../components/CreateLayout/Layout';
 import SEO from '../../components/Seo';
@@ -6,51 +7,39 @@ import PhotographerPresentational from '../../components/PhotographerPresentatio
 
 import photographerInfo from '../../info/parfenok.json';
 
-class Parfenok extends React.Component {
-    constructor(props) {
-        super(props);
+const Parfenok = () => {
+    const { t } = useTranslation();
 
-        this.state = {
-            mainPic: photographerInfo.mainPic,
-            name: photographerInfo.name,
-            lifeYears: photographerInfo.lifeYears,
-            about: photographerInfo.about,
-            videoSrc: photographerInfo.videoSrc,
-            googleMap: photographerInfo.googleMap,
-            googleLife: photographerInfo.googleLife,
-            timeLineDates: photographerInfo.timeLineDates,
-            timeLineInfos: photographerInfo.timeLineInfos,
-        };
-    }
+    const { mainPic } = photographerInfo;
+    const { name } = photographerInfo;
+    const { lifeYears } = photographerInfo;
+    const { about } = photographerInfo;
+    const { videoSrc } = photographerInfo;
+    const { googleMap } = photographerInfo;
+    const { googleLife } = photographerInfo;
+    const { timeLineDates } = photographerInfo;
+    const { timeLineInfos } = photographerInfo;
+    const { gallery } = photographerInfo;
+    const { masterWorks } = photographerInfo;
 
-    render() {
-        const { mainPic } = this.state;
-        const { name } = this.state;
-        const { lifeYears } = this.state;
-        const { about } = this.state;
-        const { videoSrc } = this.state;
-        const { googleMap } = this.state;
-        const { googleLife } = this.state;
-        const { timeLineDates } = this.state;
-        const { timeLineInfos } = this.state;
-
-        return (
-            <Layout>
-                <SEO title="Парфенок" />
-                <PhotographerPresentational
-                    mainPic={mainPic}
-                    name={name}
-                    lifeYears={lifeYears}
-                    about={about}
-                    videoSrc={videoSrc}
-                    googleLife={googleLife}
-                    googleMap={googleMap}
-                    timeLineDates={timeLineDates}
-                    timeLineInfos={timeLineInfos}
-                />
-            </Layout>
-        );
-    }
-}
+    return (
+        <Layout>
+            <SEO title={t('Parfenok Vladimir Petrovich')} />
+            <PhotographerPresentational
+                mainPic={mainPic}
+                name={name}
+                lifeYears={lifeYears}
+                about={about}
+                videoSrc={videoSrc}
+                googleLife={googleLife}
+                googleMap={googleMap}
+                timeLineDates={timeLineDates}
+                timeLineInfos={timeLineInfos}
+                gallery={gallery}
+                masterWorks={masterWorks}
+            />
+        </Layout>
+    );
+};
 
 export default Parfenok;

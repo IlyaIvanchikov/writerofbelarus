@@ -1,12 +1,17 @@
 import React from 'react';
 import './team.css';
 
+import { withTranslation, Trans } from 'react-i18next';
+
 class Team extends React.Component {
     constructor(props) {
         super(props);
+        this.handleOver = this.handleOver.bind(this);
+        this.handleLeave = this.handleLeave.bind(this);
         this.state = {
             creators: [],
             title: {},
+            showInfo: ['none', 'none', 'none', 'none', 'none', 'none'],
         };
     }
 
@@ -14,93 +19,108 @@ class Team extends React.Component {
         const _creators = [
             {
                 id: '1',
-                name_eng: 'Dzmitri Faryna',
-                name_ru: 'Дмитрий Фарина',
-                name_by: 'Дзмiтрый Фарына',
+                name_eng: 'TeamFaryna',
                 src: 'team_images/esoshyki.png',
                 alt: 'Faryna',
                 gitHub: 'https://github.com/esoshyki',
+                workDone: 'Team cards, colors, styling and translate.',
             },
             {
                 id: '2',
-                name_eng: 'Aleksandr Dren',
-                name_ru: 'Александр Дрень',
-                name_by: 'Аляксандр Дрэнь',
-                src: 'team_images/default.png',
+                name_eng: 'TeamDren',
+                src: 'team_images/dren.png',
                 alt: 'Dren',
                 gitHub: 'https://github.com/noway36',
+                workDone: `Architecture, config, youtube-modal, stying and translate.`,
             },
             {
                 id: '3',
-                name_eng: 'Ilya Ivanchikov',
-                name_ru: 'Илья Иванчиков',
-                name_by: 'Iлля Iванчыкоy',
+                name_eng: 'TeamIvanchikov',
                 src: 'team_images/ivanchikov.png',
                 alt: 'Ivanchikov',
                 gitHub: 'https://github.com/ilyaivanchikov',
+                workDone: 'Google Map, galllery, masterwork, translate',
             },
             {
                 id: '4',
-                name_eng: 'Stanislau Famin',
-                name_ru: 'Станислав Фомин',
-                name_by: 'Станiслау Фамин',
-                src: 'team_images/default.png',
-                alt: 'Famin',
+                name_eng: 'TeamFomin',
+                src: 'team_images/slava.png',
+                alt: 'Fomin',
                 gitHub: 'https://github.com/slava-ff',
+                workDone: 'i18next configuration, language toggle function',
             },
             {
                 id: '5',
-                name_eng: 'Ihar Tsykala',
-                name_ru: 'Игорь Цыкало',
-                name_by: 'Игар Цыкала',
-                src: 'team_images/default.png',
+                name_eng: 'TeamTsykala',
+                src: 'team_images/tsyk.png',
                 alt: 'Tsykala',
                 gitHub: 'https://github.com/ihartsykala',
+                workDone: 'Home page content, DailyPerson, translate',
             },
             {
                 id: '6',
-                name_eng: 'Mukhamed Talaspaev',
-                name_ru: 'Мухаммед Таласпаев',
-                name_by: 'Мухамед Таласпаеу',
-                src: 'team_images/default.png',
-                alt: 'Talaspaev',
-                gitHub: 'https://github.com/talaspaev',
-            },
-            {
-                id: '7',
-                name_eng: 'Kemalkhan Shlembayev',
-                name_ru: 'Кемалхан Шлембаев',
-                name_by: 'Кемалхан Шлямбяеу',
-                src: 'team_images/default.png',
+                name_eng: 'TeamShlembayev',
+                src: 'team_images/kemal.png',
                 alt: 'Shlembayev',
                 gitHub: 'https://github.com/slider7',
+                workDone:
+                    'TimeLine, search, find and edit info about photographers',
             },
         ];
-        const _title = {
-            en: 'This site was created by delevopers:',
-            ru: 'Этот сайт создан командой разработчиков:',
-            by: 'Гэты сайт створаны камандай распрацоўшчыкаў:',
-        };
+        const _title = 'TeamHeader';
         this.setState({
             creators: _creators,
             title: _title,
         });
     }
 
+    handleOver(e) {
+        const cards = [...document.querySelectorAll('.teamCard_photo')];
+        const cardIndex = cards.indexOf(e.target);
+
+        this.setState(state => {
+            const showInfo = state.showInfo;
+            showInfo[cardIndex] = 'block';
+
+            return {
+                showInfo,
+            };
+        });
+    }
+
+    handleLeave() {
+        this.setState({
+            showInfo: ['none', 'none', 'none', 'none', 'none', 'none'],
+        });
+    }
+
     render() {
         const { creators } = this.state;
         const { title } = this.state;
+        const { showInfo } = this.state;
+
         return (
             <>
                 <div className="team_container">
-                    <h2>{title.ru}</h2>
+                    <h2>
+                        <Trans>{title}</Trans>
+                    </h2>
                     <div className="teamCard_container">
                         {creators.map((el, idx) => {
                             return (
-                                <div className="teamCard" key={el.id} id={`teamCard${idx}`}>
-                                    <div className="teamCard_photo_layer1">
+                                <div
+                                    className="teamCard"
+                                    key={el.id}
+                                    id={`teamCard${idx}`}
+                                >
+                                    <div
+                                        className="teamCard_photo_layer1"
+                                        id={`teamCard_photo${idx}`}
+                                    >
                                         <div className="teamCard_photo_layer2">
                                             <div
+                                                onMouseEnter={this.handleOver}
+                                                onMouseLeave={this.handleLeave}
                                                 className="teamCard_photo"
                                                 style={{
                                                     background: `url(${el.src})`,
@@ -119,13 +139,21 @@ class Team extends React.Component {
                                                 textAlign: 'center',
                                             }}
                                         >
-                                            {el.name_ru}
+                                            <Trans>{el.name_eng}</Trans>
                                         </h4>
                                     </div>
                                     <div className="teamCard_github">
                                         <a href={`${el.gitHub}`}>
                                             <i className="fab fa-github" />
                                         </a>
+                                    </div>
+                                    <div
+                                        style={{
+                                            display: `${showInfo[idx]}`,
+                                        }}
+                                        className="teamCard_workDone"
+                                    >
+                                        <p>{el.workDone}</p>
                                     </div>
                                 </div>
                             );
@@ -137,4 +165,4 @@ class Team extends React.Component {
     }
 }
 
-export default Team;
+export default withTranslation()(Team);

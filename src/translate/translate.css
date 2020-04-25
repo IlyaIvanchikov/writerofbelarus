@@ -1,5 +1,14 @@
 .language-select {
     position: absolute;
-    top: 1%;
+    top: 0%;
     left: 1%;
+    padding: auto;
+    width: 50px;
+    height: 40px;
+}
+
+.language-select-image {
+    width: 15px;
+    height: 15px;
+    padding: 0 5px;
 }

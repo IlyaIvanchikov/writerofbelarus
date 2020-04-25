@@ -11,9 +11,10 @@
     height: 100%;
     width: 80%;
     border: 2px solid black;
+    background: transparent url(/googleMap/831.gif) no-repeat center center;
 }
-
 .google-life {
-    margin-bottom: 15px;
+    text-align: center;
+    margin-bottom: 25px;
     font-size: 22px;
 }

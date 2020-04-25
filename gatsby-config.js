@@ -1,9 +1,10 @@
 module.exports = {
     siteMetadata: {
-        title: `Фотографы Беларуси`,
+        title: `Photographers of Belarus`,
         description: ``,
         author: `rs_team`,
     },
+    pathPrefix: '/culture-portal',
     plugins: [
         `gatsby-plugin-react-helmet`,
         {

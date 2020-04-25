@@ -1,17 +1,69 @@
 {
     "mainPic": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Uladzimir_Parfianok.jpg/1200px-Uladzimir_Parfianok.jpg",
-    "name": "Парфенок Владимир Петрович",
-    "lifeYears": "1958 г.р.",
-    "about": "Белорусский фотограф, куратор выставочных проектов, руководитель галереи визуальных искусств «NOVA». Живёт и работает в Минске. В творческой фотографии с середины 1980-х гг. Участвовал в многочисленных выставочных проектах в Беларуси и за рубежом. В фотографии — сторонник аналоговых технологий и ручной печати.",
+    "name": "Parfenok Vladimir Petrovich",
+    "lifeYears": "Born in 1958",
+    "about": "ParfenokAbout",
     "videoSrc": "https://www.youtube.com/embed/EX_fVFPdDoY?autoplay=1",
     "googleMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.700302404739!2d27.583234015738938!3d53.91930133934083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfa125d183b7%3A0x247fd09224d3bf26!2svulica+Ku%C4%BAman+2%2C+Minsk+220089!5e0!3m2!1sen!2sby!4v1564320877626!5m2!1sen!2sby",
-    "googleLife": "Руководитель галереи визуальных искусств «NOVA»",
-    "timeLineDates": ["1995", "1996", "1997", "1999", "2002"],
+    "googleLife": "ParfenokLife",
+    "timeLineDates": [
+        "1989 - 1991",
+        "1991 - 2002",
+        "1994",
+        "1995 - 2002",
+        "1996 – 2019"
+    ],
     "timeLineInfos": [
-        "Lucida momenta. Галерея Fotografisk Galleri. Копенгаген (Дания), Галерея Foto Medium Art. Вроцлав (Польша)",
-        "Lucida momenta. Художественная галерея Klodzki Osrodek Kultury. Клодзко (Польша)",
-        "Lucida momenta. Государственный художественный музей. В рамках второго Международного Шагаловского пленэра. Витебск (Беларусь)",
-        "Vladimir Parfenok. Photography. В рамках Backlight— пятого Международного фотографического триеннале. Центр фотографии Nykyaika. Тампере (Финляндия)",
-        "Недостоверные факты с места событий. M-галерея Института имени Гёте. Минск"
-    ]
+        "Parfenok1989",
+        "Parfenok1991",
+        "Parfenok1994",
+        "Parfenok1995",
+        "Parfenok1996"
+    ],
+    "gallery": [
+        "/gallery/parfenok/1.jpg",
+        "/gallery/parfenok/2.jpg",
+        "/gallery/parfenok/3.jpg"
+    ],
+    "masterWorks": [{
+        "id": 1,
+        "composition": "Дом кино",
+        "dateOfCreation": "1998"
+    },
+    {
+        "id": 2,
+        "composition": "Новая советская фотография",
+        "dateOfCreation": "1998"
+    },
+    {
+        "id": 3,
+        "composition": "Белорусский фотоавангард",
+        "dateOfCreation": "1990"
+    },
+    {
+        "id": 4,
+        "composition": "Фотографы из Минска",
+        "dateOfCreation": "1990"
+    },
+    {
+        "id": 5,
+        "composition": "Эрозия",
+        "dateOfCreation": "1990"
+    },
+    {
+        "id": 6,
+        "composition": "Современная фотография из СССР",
+        "dateOfCreation": "1990"
+    },
+    {
+        "id": 7,
+        "composition": "Новая волна",
+        "dateOfCreation": "1991"
+    },
+    {
+        "id": 8,
+        "composition": "В тени Нагасаки",
+        "dateOfCreation": "1991"
+    }
+]
 }
